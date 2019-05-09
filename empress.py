@@ -18,20 +18,19 @@ import argparse
 import RPi.GPIO as GPIO
 from time import sleep
 
-def press(pin, seconds):
-    GPIO.output(pin, GPIO.HIGH)
-    sleep(seconds)
-    GPIO.output(pin, GPIO.LOW)
-
 # System Targets List
 systems = ["system1", "system2"]
 # System Power Pin List
 powerpin = [22, 24]
 # System Reset Pin List
 resetpin = [23, 25]
-
 # All the pins that are used
 pins = powerpin + resetpin
+
+def press(pin, seconds):
+    GPIO.output(pin, GPIO.HIGH)
+    sleep(seconds)
+    GPIO.output(pin, GPIO.LOW)
 
 # Setup ArgParser
 parser = argparse.ArgumentParser(
