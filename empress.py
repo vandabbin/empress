@@ -24,7 +24,7 @@ def press(pin, seconds):
     GPIO.output(pin, GPIO.LOW)
 
 # System Targets List
-systems = ["tornado", "foxhole"]
+systems = ["system1", "system2"]
 # System Power Pin List
 powerpin = [22, 24]
 # System Reset Pin List
