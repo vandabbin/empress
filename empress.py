@@ -30,6 +30,9 @@ powerpin = [22, 24]
 # System Reset Pin List
 resetpin = [23, 25]
 
+# All the pins that are used
+pins = powerpin + resetpin
+
 # Setup ArgParser
 parser = argparse.ArgumentParser(
     prog='empress',
@@ -75,7 +78,7 @@ args = parser.parse_args()
 # Setup GPIO
 GPIO.setmode(GPIO.BCM)  # Set Board Layout
 GPIO.setwarnings(False) # Turn Warnings Off
-GPIO.setup([22, 23, 24, 25], GPIO.OUT, initial=GPIO.LOW)  # Mark Pins 22 - 25 as Output
+GPIO.setup(pins, GPIO.OUT, initial=GPIO.LOW)  # Mark pins as Output
 
 # Check if target is valid
 if args.target.lower() in systems:
@@ -97,5 +100,5 @@ else:
     print("Target System not recognized. Known Systems listed below")
     print(systems)
 
-# Set GPIO Pins 22 - 25 to default
-GPIO.cleanup([22, 23, 24, 25])
+# Set GPIO pins to default
+GPIO.cleanup(pins)
