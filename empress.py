@@ -36,41 +36,41 @@ pins = powerpin + resetpin
 # Setup ArgParser
 parser = argparse.ArgumentParser(
     prog='empress',
-    description='External Management of Power and RESet Switchs'
-)
-parser.add_argument('-t',
-                    '--target',
-                    required=True,
-                    action='store',
-                    dest="target",
-                    help='Target System (required)')
+    description='External Management of Power and RESet Switchs')
+
+parser.add_argument(
+    '--target', '-t',
+    required=True,
+    action='store',
+    dest="target",
+    help='Target System (required)')
 
 group = parser.add_mutually_exclusive_group(required=True)
-group.add_argument('-P',
-                   '--poweron',
-                   action='store_true',
-                   dest="poweron",
-                   default=False,
-                   help='Flag indicates Power Toggle Target System')
+group.add_argument(
+    '--poweron', '-P',
+    action='store_true',
+    dest="poweron",
+    default=False,
+    help='Flag indicates Power Toggle Target System')
 
-group.add_argument('-p',
-                   '--poweroff',
-                   action='store_true',
-                   dest="poweroff",
-                   default=False,
-                   help='Flag indicates Power Off  Target System')
+group.add_argument(
+    '--poweroff', '-p',
+    action='store_true',
+    dest="poweroff",
+    default=False,
+    help='Flag indicates Power Off  Target System')
 
-group.add_argument('-r',
-                   '--reset',
-                   action='store_true',
-                   dest="reset",
-                   default=False,
-                   help='Flag indicates Reset Target System')
+group.add_argument(
+     '--reset', '-r',
+     action='store_true',
+     dest="reset",
+     default=False,
+     help='Flag indicates Reset Target System')
 
-parser.add_argument('-v',
-                    '--version',
-                    action='version',
-                    version='%(prog)s v0.1 Copyright (C) 2018, 2019 Barry Van Deerlin')
+parser.add_argument(
+    '--version', '-v',
+    action='version',
+    version='%(prog)s v0.1 Copyright (C) 2018, 2019 Barry Van Deerlin')
 
 # Parse Args
 args = parser.parse_args()
