@@ -3,7 +3,7 @@ External Management of Power and RESet Switches of PC/Server via RPi.GPIO and a 
 
 Send the command via ssh or set up a web server that executes the script.
 
-The python script works in combination with the additional circuit that you can either have printed, make your on,
+The python script works in combination with the additional circuit that you can either have printed, make your own,
 or use the schematic to build on a breadboard.
 
 You can retrieve those files either from the schematics folder or from my easyeda project page: https://easyeda.com/vandabbin/empress
